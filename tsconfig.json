@@ -1,0 +1,9 @@
+{
+  "root": true,
+  "extends": "@fullstacksjs/tsconfig/react",
+  "include": ["src", "public"],
+  "exclude": ["node_modules", "build"],
+  "compilerOptions": {
+    "baseUrl": "src"
+  }
+}

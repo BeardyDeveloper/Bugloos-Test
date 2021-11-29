@@ -1,0 +1,21 @@
+@import "variables";
+@import "fonts";
+
+*,
+* * {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Gordita Regular";
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
