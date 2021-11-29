@@ -30,7 +30,9 @@
     "prepare": "husky install",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
+    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
     "production": [
@@ -47,10 +49,29 @@
   "devDependencies": {
     "@fullstacksjs/eslint-config": "^6.10.0",
     "@fullstacksjs/tsconfig": "^0.6.0",
+    "@storybook/addon-actions": "^6.4.0",
+    "@storybook/addon-essentials": "^6.4.0",
+    "@storybook/addon-links": "^6.4.0",
+    "@storybook/cli": "^6.4.0",
+    "@storybook/node-logger": "^6.4.0",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "node-sass": "^6.0.1",
     "prettier": "^2.5.0"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }
