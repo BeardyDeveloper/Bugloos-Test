@@ -21,7 +21,7 @@ const authReducer = (
   action: AuthAction,
   state: InitialState = initialState,
 ) => {
-  switch (action.type) {
+  switch (action?.type) {
     case authActionTypes.AUTH_START:
       return {
         loading: true,

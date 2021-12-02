@@ -4,6 +4,7 @@
   "include": ["src", "public"],
   "exclude": ["node_modules", "build"],
   "compilerOptions": {
-    "baseUrl": "src"
+    "baseUrl": "src",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   }
 }

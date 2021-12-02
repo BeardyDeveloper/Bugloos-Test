@@ -1,13 +1,14 @@
-@import "variables";
-@import "fonts";
+@import 'variables';
+@import 'fonts';
 
 *,
 * * {
   box-sizing: border-box;
+  font-family: 'Gordita Medium';
 }
 
 body {
-  font-family: "Gordita Regular";
+  font-family: 'Gordita Medium';
   padding: 0;
   margin: 0 auto;
   box-sizing: border-box;
@@ -15,7 +16,48 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
 a,
 a:hover {
   text-decoration: none;
+}
+
+a.active {
+  color: $success;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }

@@ -1,0 +1,40 @@
+@import '../../../styles/variables';
+
+.container {
+  width: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.icon {
+  cursor: pointer;
+  transition: color 150ms ease-in;
+  font-size: 20px;
+}
+
+.grayIcon {
+  @extend .icon;
+  color: $text-primary;
+}
+
+.lightIcon {
+  @extend .icon;
+  color: $paper;
+}
+
+.grayIcon:hover,
+.lightIcon:hover {
+  color: $success;
+  transition: color 150ms ease-in;
+}
+
+.storyContainer {
+  padding: 15px;
+  background-color: $text-primary;
+}
+
+.storyContainerLight {
+  padding: 15px;
+  background-color: $background-primary;
+}

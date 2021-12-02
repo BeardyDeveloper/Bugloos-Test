@@ -13,7 +13,7 @@ const coursesReducer = (
   action: CourseAction,
   state: InitialState = initialState,
 ) => {
-  switch (action.type) {
+  switch (action?.type) {
     case authActionTypes.ADD_COURSE:
       return {
         selectedCourses: state.selectedCourses?.push(action.id),

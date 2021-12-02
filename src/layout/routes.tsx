@@ -1,9 +1,9 @@
-import React from 'react';
+import { Register } from 'pages/register/Register';
 
 export const routes = [
   {
     id: '1',
-    path: '/',
-    element: <div />,
+    path: '/Register',
+    element: <Register />,
   },
 ];

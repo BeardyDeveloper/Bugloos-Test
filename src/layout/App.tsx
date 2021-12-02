@@ -1,3 +1,5 @@
+import '../styles/global.scss';
+
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 

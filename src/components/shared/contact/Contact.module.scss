@@ -1,0 +1,70 @@
+@import '../../../styles/variables';
+
+.rowContainer {
+  position: relative;
+  width: 495px;
+  @include center;
+}
+
+.afterBefore {
+  content: '';
+  @include position(absolute, $top: 50%);
+  width: 30px;
+  height: 25px;
+  background-image: url('../../../assets/images/Shape\ \(9\).png');
+  background-repeat: no-repeat;
+  background-size: 30px;
+  background-position: center center;
+}
+
+.rowContainer::before {
+  @extend .afterBefore;
+  left: -30px;
+  transform: translateY(-50%);
+}
+
+.rowContainer::after {
+  @extend .afterBefore;
+  right: -30px;
+  transform: translateY(-50%) rotateY(-180deg);
+}
+
+.columnContainer {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.contactItem {
+  width: auto;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 25px;
+}
+
+.icon {
+  color: $success;
+  margin-right: 12px;
+  font-size: 16px;
+}
+
+.label {
+  font-size: 16px;
+  color: $paper;
+  transition: color 200ms ease-in;
+  cursor: pointer;
+}
+
+.label:hover {
+  color: $success;
+  transition: color 200ms ease-in;
+}
+
+.storyContainer {
+  padding: 15px;
+  background-color: $text-primary;
+  @include center;
+}

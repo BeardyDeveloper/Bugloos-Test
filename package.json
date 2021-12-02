@@ -31,7 +31,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "storybook": "start-storybook -p 6006 -s public",
+    "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook -s public"
   },
   "browserslist": {
@@ -60,7 +60,8 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.1.2",
     "node-sass": "^6.0.1",
-    "prettier": "^2.5.0"
+    "prettier": "^2.5.0",
+    "typescript-plugin-css-modules": "^3.4.0"
   },
   "eslintConfig": {
     "overrides": [

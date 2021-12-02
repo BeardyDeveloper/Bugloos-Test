@@ -8,8 +8,59 @@ $text-secondary: #1d2733;
 $text-ternary: #52565b;
 
 $border: rgba(48, 146, 85, 0.25);
-$shadow: rgb(33, 40, 50 / 15%);
+$shadow: rgba(33, 40, 50, 0.15);
 
 $paper: #ffffff;
 $background-primary: #eefbf3;
 $background-secondary: #deede4;
+
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin textShape {
+  content: '';
+  width: 120px;
+  height: 13px;
+  @include position(absolute, $bottom: -12px, $left: 50%);
+  background-image: url('../assets/images/shape-T.png');
+  @include background;
+  transform: translateX(-50%);
+}
+
+@mixin roundShape {
+  content: '';
+  width: 160px;
+  height: 35px;
+  @include position(absolute, $bottom: -25px, $left: 50%);
+  background-image: url('../assets/images/Shape\ \(2\).png');
+  @include background;
+  transform: translateX(-50%);
+}
+
+@mixin roundShapeReverse {
+  @include roundShape;
+  transform: translateX(-50%) rotateZ(-180deg);
+}
