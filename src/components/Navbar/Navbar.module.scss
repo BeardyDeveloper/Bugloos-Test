@@ -10,7 +10,7 @@
 
 .navbarTop {
   @extend .navbar;
-  position: relative;
+  @include position(absolute, $top: 50px, $left: 0);
   margin: 35px auto;
   background-color: transparent;
 }

@@ -1,5 +1,6 @@
 import { FC } from 'react';
 
+import { Spinner } from '../spinner/Spinner';
 import styles from './Button.module.scss';
 
 export enum ButtonType {
@@ -12,11 +13,12 @@ export enum ButtonType {
 export interface ButtonProps {
   type?: ButtonType;
   label: string;
-  onClick: () => void;
+  loading?: boolean;
+  onClick?: () => void;
 }
 
 export const Button: FC<ButtonProps> = props => {
-  const { type, label } = props;
+  const { type, label, loading, onClick } = props;
 
   const buttonStyle = () => {
     switch (type) {
@@ -35,6 +37,8 @@ export const Button: FC<ButtonProps> = props => {
   };
 
   return (
-    <div className={[styles.button, buttonStyle()].join(' ')}>{label}</div>
+    <div className={[styles.button, buttonStyle()].join(' ')} onClick={onClick}>
+      {loading ? <Spinner /> : label}
+    </div>
   );
 };

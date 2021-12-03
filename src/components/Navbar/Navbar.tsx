@@ -1,12 +1,15 @@
 import Logo from 'assets/images/Logo.png';
 import { Button, ButtonType } from 'components/shared/buttons/Button';
 import { FC, useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
+import { logOut } from 'redux/actionCreators/authActionCreators';
 
 import styles from './Navbar.module.scss';
 import { navLinks } from './navLinks';
 
 export const Navbar: FC = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [scrollState, setScrollState] = useState('top');
@@ -44,8 +47,8 @@ export const Navbar: FC = () => {
           <div className={styles.buttonWrapper}>
             <Button
               type={ButtonType.Link}
-              label="Sign In"
-              onClick={() => navigate('/Register')}
+              label="Log Out"
+              onClick={() => dispatch(logOut())}
             />
           </div>
           <div className={styles.buttonWrapper}>

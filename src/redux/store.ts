@@ -14,14 +14,11 @@ const rootReducer = combineReducers({
 const persistConfig = {
   key: 'root',
   storage,
-  blacklist: [],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
-export const store = createStore(persistedReducer, composeWithDevTools());
-store.subscribe(() => {
-  store.getState();
-});
+const store = createStore(persistedReducer);
+const persistor = persistStore(store);
 
-export const persistor = persistStore(store);
+export { persistor, store };

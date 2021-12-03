@@ -20,6 +20,8 @@ export const SuccessButton = Template.bind({});
 
 export const InfoButton = Template.bind({});
 
+export const LinkButton = Template.bind({});
+
 DefaultButton.args = {
   type: ButtonType.Default,
   label: 'Sign Up',
@@ -32,5 +34,10 @@ SuccessButton.args = {
 
 InfoButton.args = {
   type: ButtonType.Info,
+  label: 'Create an account',
+} as Args;
+
+LinkButton.args = {
+  type: ButtonType.Link,
   label: 'Create an account',
 } as Args;

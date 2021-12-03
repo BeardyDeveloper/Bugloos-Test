@@ -1,0 +1,9 @@
+@import '../../styles/variables';
+
+.registerSection {
+  position: relative;
+  width: 100%;
+  padding: 60px 0;
+  background-color: $paper;
+  @include center;
+}

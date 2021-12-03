@@ -5,6 +5,7 @@
   "exclude": ["node_modules", "build"],
   "compilerOptions": {
     "baseUrl": "src",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "noPropertyAccessFromIndexSignature": false
   }
 }
