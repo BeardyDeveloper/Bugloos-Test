@@ -1,5 +1,6 @@
 @import '../../../styles/variables';
 
+.rowContainerNoArrows,
 .rowContainer {
   position: relative;
   width: 495px;
@@ -32,6 +33,9 @@
 .columnContainer {
   width: auto;
   @include left-start;
+  .contactItem {
+    margin: 2px 0;
+  }
 }
 
 .contactItem {

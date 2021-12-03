@@ -12,7 +12,7 @@
 .inputContainer {
   width: 100%;
   @include left-start;
-  margin: 12px 0;
+  margin: 15px 0;
 }
 
 .errorMessage {
@@ -23,5 +23,9 @@
 
 .buttonContainer {
   width: 100%;
-  margin: 12px 0;
+  margin: 15px 0;
+}
+
+.marginTop {
+  margin-top: 40px;
 }

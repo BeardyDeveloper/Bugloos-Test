@@ -11,15 +11,27 @@ export enum ContactType {
 
 export interface ContactProps {
   type: ContactType;
+  hideArrows?: boolean;
+  className?: string;
 }
 
 export const Contact: FC<ContactProps> = props => {
-  const { type } = props;
+  const { type, hideArrows, className } = props;
+
+  const rowContactClassName = () => {
+    if (hideArrows) {
+      return styles.rowContainerNoArrows;
+    } else {
+      return styles.rowContainer;
+    }
+  };
 
   return (
     <div
       className={
-        type === ContactType.Row ? styles.rowContainer : styles.columnContainer
+        type === ContactType.Row
+          ? [rowContactClassName(), className].join(' ')
+          : [styles.columnContainer, className].join(' ')
       }
     >
       <div className={styles.contactItem}>

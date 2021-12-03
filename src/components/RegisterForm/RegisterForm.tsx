@@ -1,5 +1,5 @@
 import RegisterImg from 'assets/images/Register.png';
-import ArrowImg from 'assets/images/Shape (9).png';
+import ArrowImg from 'assets/images/white-arrow.png';
 import { FC } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -17,8 +17,8 @@ export const RegisterForm: FC = () => {
 
   // send form data to server (this is fake and mocked )
   const onSubmit = (data: any) => {
-    // dispatch(authStart());
-    dispatch(authSuccess(data.username));
+    dispatch(authStart());
+    setTimeout(() => dispatch(authSuccess(data.username)), 2500);
   };
 
   return (

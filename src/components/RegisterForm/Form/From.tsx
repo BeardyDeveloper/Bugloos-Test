@@ -106,7 +106,7 @@ export const Form: FC<FormProps> = props => {
               </div>
             )}
           </div>
-          <div className={styles.buttonContainer}>
+          <div className={[styles.buttonContainer, styles.marginTop].join(' ')}>
             <Button
               label="Create an account"
               type={ButtonType.Success}

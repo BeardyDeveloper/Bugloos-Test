@@ -1,27 +1,27 @@
 export const navLinks = [
   {
     id: '1',
-    to: '/Register',
+    to: '/',
     label: 'Home',
   },
   {
     id: '2',
-    to: '/',
+    to: '/Courses',
     label: 'All Course',
   },
   {
     id: '3',
-    to: '/',
-    label: 'Pages',
+    to: '/Register',
+    label: 'Register',
   },
   {
     id: '4',
-    to: '/',
+    to: '/Blog',
     label: 'Blog',
   },
   {
     id: '5',
-    to: '/',
+    to: '/Contact',
     label: 'Contact',
   },
 ];

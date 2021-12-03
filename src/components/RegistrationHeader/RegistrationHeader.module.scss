@@ -41,7 +41,8 @@
   position: relative;
   width: 49%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-end;
+  z-index: 10;
   align-items: flex-start;
 }
 
@@ -53,6 +54,7 @@
   border: 1px solid $border;
   border-radius: 100%;
   padding: 10px;
+  margin-right: 20%;
 }
 
 .badgeWrapper::before {
@@ -96,5 +98,80 @@
 }
 
 .arrowRight {
-  @include position(absolute, $top: 0, $right: calc(50% - 20px));
+  @include position(absolute, $top: 0, $right: calc(40% - 20px));
+}
+
+@media (max-width: 992px) {
+  .registration {
+    padding-top: 100px;
+  }
+  .images {
+    width: 49%;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .badgeWrapper {
+    margin-top: 30px;
+    margin-right: 40%;
+  }
+  .arrowRight {
+    top: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  .registration {
+    padding-top: 50px;
+  }
+  .container {
+    height: 100%;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .images {
+    width: 100%;
+    flex-direction: row;
+    @include center;
+  }
+  .badgeWrapper {
+    width: 90px;
+    height: 90px;
+    margin-right: 20%;
+  }
+  .badgeWrapper::before {
+    background-size: 120px;
+  }
+  .badge {
+    img {
+      width: 50px;
+    }
+  }
+  .avatar {
+    img {
+      width: auto;
+    }
+  }
+  .content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .badgeWrapper {
+    width: 80px;
+    height: 80px;
+    margin-right: 12%;
+  }
+  .badgeWrapper::before {
+    background-size: 90px;
+  }
+  .badge {
+    img {
+      width: 40px;
+    }
+  }
+  .title {
+    font-size: 30px;
+  }
 }
