@@ -15,6 +15,11 @@
   transition: all 200ms ease-in;
 }
 
+.button:disabled {
+  opacity: 0.6;
+  cursor: no-drop;
+}
+
 .successButton {
   background-color: $success;
   color: $paper;
@@ -48,6 +53,7 @@
   background-color: transparent;
   color: $text-primary;
   border: none;
+  padding: 0;
 }
 
 .linkButton:hover {
@@ -55,6 +61,6 @@
 }
 
 .storyContainer {
-  width: 120px;
+  width: 200px;
   padding: 12px;
 }

@@ -1,3 +1,4 @@
+import { MobileDownload } from 'components/MobileDownload/MobileDownload';
 import { RegisterForm } from 'components/RegisterForm/RegisterForm';
 import { RegistrationHeader } from 'components/RegistrationHeader/RegistrationHeader';
 import { FC } from 'react';
@@ -11,6 +12,7 @@ export const RegisterPage: FC = () => {
       <div className={styles.registerSection}>
         <RegisterForm />
       </div>
+      <MobileDownload />
     </>
   );
 };

@@ -13,12 +13,13 @@ export enum ButtonType {
 export interface ButtonProps {
   type?: ButtonType;
   label: string;
+  disabled?: boolean;
   loading?: boolean;
   onClick?: () => void;
 }
 
 export const Button: FC<ButtonProps> = props => {
-  const { type, label, loading, onClick } = props;
+  const { type, label, disabled, loading, onClick } = props;
 
   const buttonStyle = () => {
     switch (type) {
@@ -37,8 +38,13 @@ export const Button: FC<ButtonProps> = props => {
   };
 
   return (
-    <div className={[styles.button, buttonStyle()].join(' ')} onClick={onClick}>
+    <button
+      type="button"
+      disabled={disabled}
+      className={[styles.button, buttonStyle()].join(' ')}
+      onClick={!disabled || !loading ? onClick : undefined}
+    >
       {loading ? <Spinner /> : label}
-    </div>
+    </button>
   );
 };

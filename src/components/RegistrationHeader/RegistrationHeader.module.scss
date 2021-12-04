@@ -120,7 +120,7 @@
 
 @media (max-width: 768px) {
   .registration {
-    padding-top: 50px;
+    padding-top: 30px;
   }
   .container {
     height: 100%;
@@ -131,6 +131,7 @@
     width: 100%;
     flex-direction: row;
     @include center;
+    margin-bottom: 30px;
   }
   .badgeWrapper {
     width: 90px;
@@ -139,6 +140,9 @@
   }
   .badgeWrapper::before {
     background-size: 120px;
+  }
+  .arrowRight {
+    right: 50%;
   }
   .badge {
     img {
@@ -171,5 +175,8 @@
   }
   .title {
     font-size: 30px;
+  }
+  .shapeLeft {
+    display: none;
   }
 }

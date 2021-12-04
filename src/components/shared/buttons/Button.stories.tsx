@@ -22,6 +22,10 @@ export const InfoButton = Template.bind({});
 
 export const LinkButton = Template.bind({});
 
+export const DisabledButton = Template.bind({});
+
+export const LoadingButton = Template.bind({});
+
 DefaultButton.args = {
   type: ButtonType.Default,
   label: 'Sign Up',
@@ -39,5 +43,17 @@ InfoButton.args = {
 
 LinkButton.args = {
   type: ButtonType.Link,
+  label: 'Create an account',
+} as Args;
+
+DisabledButton.args = {
+  type: ButtonType.Success,
+  disabled: true,
+  label: 'Create an account',
+} as Args;
+
+LoadingButton.args = {
+  type: ButtonType.Success,
+  loading: true,
   label: 'Create an account',
 } as Args;
