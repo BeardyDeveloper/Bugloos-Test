@@ -8,10 +8,8 @@
   padding: 0 5px 0 10px;
   overflow: hidden;
   box-sizing: border-box;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: transparent;
+  @include center-between;
+  background: $paper;
 }
 
 .textFieldError {
@@ -31,6 +29,11 @@
   @include center;
   border-radius: 8px;
   margin-right: 5px;
+  svg {
+    path {
+      color: $text-ternary;
+    }
+  }
 }
 
 .highlightIcon {
@@ -48,6 +51,7 @@
 }
 
 .input {
+  font-family: 'Gordita Regular';
   direction: ltr;
   text-align: left;
   font-size: inherit;
@@ -62,7 +66,7 @@
 }
 
 .input::placeholder {
-  font-family: 'Gordita Regular';
+  font-family: 'Gordita Light';
   font-size: 15px;
   color: $text-ternary;
 }

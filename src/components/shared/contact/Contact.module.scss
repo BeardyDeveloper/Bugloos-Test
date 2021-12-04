@@ -64,6 +64,14 @@
   transition: color 200ms ease-in;
 }
 
+.labelHighlight {
+  @extend .label;
+  font-family: 'Gordita Regular';
+  font-size: 14px;
+  font-weight: 400;
+  color: $text-primary;
+}
+
 .storyContainer {
   padding: 15px;
   background-color: $text-primary;

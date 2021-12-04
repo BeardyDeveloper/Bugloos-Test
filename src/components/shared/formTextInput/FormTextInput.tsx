@@ -11,6 +11,7 @@ export interface FormTextInputProps {
   type: string;
   name: string;
   required?: string;
+  error?: boolean;
   min?: number;
   max?: number;
   minLength?: LengthValidate;
@@ -28,6 +29,7 @@ export const FormTextInput: FC<FormTextInputProps> = props => {
     name,
     placeholder,
     required,
+    error,
     min,
     max,
     minLength,
@@ -63,6 +65,7 @@ export const FormTextInput: FC<FormTextInputProps> = props => {
       icon={icon}
       placeholder={placeholder}
       name={registerName}
+      error={error}
       textInputRef={ref}
       onChange={onChange}
       onIconClick={onIconClick}

@@ -1,0 +1,89 @@
+@import '../../../styles/variables';
+
+.copyRight {
+  width: 100%;
+  height: 50px;
+  background-color: $text-primary;
+}
+
+.container {
+  height: 100%;
+  @include center-between;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.link {
+  font-family: 'Gordita Light';
+  position: relative;
+  font-size: 14px;
+  color: $paper;
+  transition: color 200ms ease-in;
+  margin-top: 4px;
+}
+
+.link:hover {
+  color: $success;
+  transition: color 200ms ease-in;
+}
+
+.secondaryLink {
+  @extend .link;
+}
+
+.secondaryLink::before {
+  position: relative;
+  top: 4px;
+  content: '*';
+  font-size: 15px;
+  color: $paper;
+  margin-left: 5px;
+  margin-right: 10px;
+}
+
+.madeBy {
+  font-family: 'Gordita Light';
+  @include center;
+  font-size: 12px;
+  color: $paper;
+}
+
+.madeBuLink {
+  color: $success;
+  margin: 0 3px;
+}
+
+.icon {
+  color: #ff0000;
+  margin: 0 3px;
+}
+
+@media (max-width: 768px) {
+  .copyRight {
+    height: 80px;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .links {
+    margin-bottom: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  .link {
+    font-size: 11px;
+  }
+  .secondaryLink::before {
+    top: 2px;
+    font-size: 12px;
+    margin-left: 2px;
+    margin-right: 4px;
+  }
+}

@@ -38,7 +38,18 @@ export const Navbar: FC = () => {
         <img src={Logo} alt="logo" className={styles.logo} />
         <div className={styles.linksWrapper}>
           {navLinks.map(link => (
-            <NavLink key={link.id} to={link.to} className={styles.link}>
+            <NavLink
+              key={link.id}
+              to={link.to}
+              // className={styles.link}
+              className={(props: any) => {
+                return [
+                  styles.link,
+                  props.isActive ? styles.activeLink : '',
+                ].join(' ');
+              }}
+              end
+            >
               {link.label}
             </NavLink>
           ))}

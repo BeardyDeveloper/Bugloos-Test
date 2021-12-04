@@ -42,6 +42,7 @@ export const Form: FC<FormProps> = props => {
               type="text"
               name="username"
               placeholder="Name"
+              error={errors.username}
             />
             {errors.username && (
               <div className={styles.errorMessage}>
@@ -64,6 +65,7 @@ export const Form: FC<FormProps> = props => {
               type="text"
               name="email"
               placeholder="Email"
+              error={errors.email}
             />
             {errors.email && (
               <div className={styles.errorMessage}>{errors.email.message}</div>
@@ -80,6 +82,7 @@ export const Form: FC<FormProps> = props => {
               }}
               placeholder="Password"
               icon={<FiEye />}
+              error={errors.password}
               onIconClick={() => setShowPassword(prev => !prev)}
             />
             {errors.password && (
@@ -90,7 +93,7 @@ export const Form: FC<FormProps> = props => {
           </div>
           <div className={styles.inputContainer}>
             <FormTextInput
-              name="confirmPpassword"
+              name="confirmPassword"
               type={showConfirmPassword ? 'text' : 'password'}
               required="this is required"
               validate={(value: string) =>
@@ -98,11 +101,12 @@ export const Form: FC<FormProps> = props => {
               }
               placeholder="Confirm Password"
               icon={<FiEye />}
+              error={errors.confirmPassword}
               onIconClick={() => setShowConfiemPassword(prev => !prev)}
             />
-            {errors.confirmPpassword && (
+            {errors.confirmPassword && (
               <div className={styles.errorMessage}>
-                {errors.confirmPpassword.message}
+                {errors.confirmPassword.message}
               </div>
             )}
           </div>

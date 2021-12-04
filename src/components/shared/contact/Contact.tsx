@@ -7,6 +7,7 @@ import styles from './Contact.module.scss';
 export enum ContactType {
   Row,
   Column,
+  ColumnHighlight,
 }
 
 export interface ContactProps {
@@ -40,7 +41,15 @@ export const Contact: FC<ContactProps> = props => {
             <FiPhoneCall />
           </div>
         </IconContext.Provider>
-        <span className={styles.label}>(970) 262-1413</span>
+        <span
+          className={
+            type === ContactType.ColumnHighlight
+              ? styles.labelHighlight
+              : styles.label
+          }
+        >
+          (970) 262-1413
+        </span>
       </div>
       <div className={styles.contactItem}>
         <IconContext.Provider value={{ className: styles.icon }}>
@@ -48,7 +57,15 @@ export const Contact: FC<ContactProps> = props => {
             <FiMail />
           </div>
         </IconContext.Provider>
-        <span className={styles.label}>address@gmail.com</span>
+        <span
+          className={
+            type === ContactType.ColumnHighlight
+              ? styles.labelHighlight
+              : styles.label
+          }
+        >
+          address@gmail.com
+        </span>
       </div>
     </div>
   );

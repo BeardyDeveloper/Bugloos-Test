@@ -1,10 +1,8 @@
 import { Meta, Story } from '@storybook/react/types-6-0';
 import { useState } from 'react';
-import { IconContext } from 'react-icons';
 import { BsCardText } from 'react-icons/bs';
 
 import { TextField, TextFieldProps } from './TextField';
-import styles from './TextField.module.scss';
 
 export default {
   title: 'Atoms / TextField',

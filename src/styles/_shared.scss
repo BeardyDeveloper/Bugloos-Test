@@ -1,0 +1,63 @@
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin left-start {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+@mixin center-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin background {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin textShape {
+  content: '';
+  width: 120px;
+  height: 13px;
+  @include position(absolute, $bottom: -12px, $left: 50%);
+  background-image: url('../assets/images/shape-T.png');
+  @include background;
+  transform: translateX(-50%);
+}
+
+@mixin roundShape {
+  content: '';
+  width: 160px;
+  height: 35px;
+  @include position(absolute, $bottom: -25px, $left: 50%);
+  background-image: url('../assets/images/Shape\ \(2\).png');
+  @include background;
+  transform: translateX(-50%);
+}
+
+@mixin roundShapeReverse {
+  @include roundShape;
+  transform: translateX(-50%) rotateZ(-180deg);
+}
