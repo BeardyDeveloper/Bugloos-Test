@@ -2,7 +2,6 @@ import '../styles/global.scss';
 
 import PrivateRegister from 'components/PrivateRoutes/PrivateRegister';
 import PrivateRoute from 'components/PrivateRoutes/PrivateRoute';
-import { RegisterPage } from 'pages/register/RegisterPage';
 import React, { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
