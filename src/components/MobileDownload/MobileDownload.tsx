@@ -12,7 +12,7 @@ export const MobileDownload: FC = () => {
       <div className={['container', styles.container].join(' ')}>
         <div className={styles.content}>
           <span>Ready to start?</span>
-          <h2>Download our mobile app. for easy to start your course.</h2>
+          <h6>Download our mobile app. for easy to start your course.</h6>
         </div>
         <img src={Arrow} alt="" className={styles.arrow} />
         <div className={styles.links}>

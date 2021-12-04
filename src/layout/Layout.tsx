@@ -8,7 +8,7 @@ import useMedia from 'use-media';
 export const Layout: React.FC = props => {
   const { children } = props;
 
-  const isBelowTablet = useMedia({ maxWidth: 992 });
+  const isBelowTablet = useMedia({ maxWidth: 991 });
 
   return (
     <>
