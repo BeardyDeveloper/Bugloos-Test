@@ -39,4 +39,4 @@ By `Mohammad Mirzaei` (with love)
 
 ## Feedback
 
-If you have any feedback, please reach out to us at beardydeveloper@gmail.com
+If you have any feedback, please reach out to me at beardydeveloper@gmail.com
