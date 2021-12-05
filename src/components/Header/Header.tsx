@@ -6,7 +6,7 @@ import useMedia from 'use-media';
 import styles from './Header.module.scss';
 
 export const Header: FC = () => {
-  const isBelowLaptopS = useMedia({ maxWidth: 1200 });
+  const isBelowLaptopS = useMedia({ maxWidth: 1199 });
 
   return (
     <div className={styles.header}>
