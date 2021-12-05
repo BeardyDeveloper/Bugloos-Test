@@ -1,4 +1,4 @@
-import * as authActionTypes from '../actionTypes/actionTypes';
+import * as coursesActionTypes from '../actionTypes/actionTypes';
 import { CourseAction } from '../IRedux';
 
 interface InitialState {
@@ -14,15 +14,10 @@ const coursesReducer = (
   state: InitialState = initialState,
 ) => {
   switch (action?.type) {
-    case authActionTypes.ADD_COURSE:
-      return {
-        selectedCourses: state.selectedCourses?.push(action.id),
-      };
-
-    case authActionTypes.DELETE_COURSE:
-      return {
-        selectedCourses: state.selectedCourses?.filter(id => id === action.id),
-      };
+    case coursesActionTypes.ADD_COURSE:
+      return { ...state, selectedCourses: action?.idsArray };
+    case coursesActionTypes.DELETE_COURSES:
+      return { selectedCourses: null };
 
     default:
       return state;

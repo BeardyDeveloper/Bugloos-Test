@@ -1,13 +1,16 @@
+import { CourseAction } from 'redux/IRedux';
+
 import * as actionTypes from '../actionTypes/actionTypes';
 
-interface Courses {
-  type: string;
-  [key: string]: string;
-}
-
-export const addCourse = (id: string): Courses => {
+export const addCourses = (idsArray: string[]): CourseAction => {
   return {
     type: actionTypes.ADD_COURSE,
-    id,
+    idsArray,
+  };
+};
+
+export const deleteCourses = () => {
+  return {
+    type: actionTypes.DELETE_COURSES,
   };
 };

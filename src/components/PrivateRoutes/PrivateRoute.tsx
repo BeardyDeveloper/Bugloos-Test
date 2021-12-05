@@ -1,12 +1,15 @@
-import { CoursesPage } from 'pages/courses/CoursesPage';
-import { FC } from 'react';
+import { FC, ReactElement } from 'react';
 import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
 
-const PrivateRoute: FC = () => {
+interface PrivateRoute {
+  children: ReactElement;
+}
+
+const PrivateRoute: FC<PrivateRoute> = ({ children }) => {
   const token = useSelector((state: any) => state.auth.token);
 
-  return token != null ? <CoursesPage /> : <Navigate to="/Register" />;
+  return token != null ? children : <Navigate to="/Register" />;
 };
 
 export default PrivateRoute;

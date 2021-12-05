@@ -6,4 +6,4 @@ export const LOG_OUT = 'LOG_OUT';
 
 // courses
 export const ADD_COURSE = 'ADD_COURSE';
-export const DELETE_COURSE = 'DELETE_COURSE';
+export const DELETE_COURSES = 'DELETE_COURSES';
