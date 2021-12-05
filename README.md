@@ -1,17 +1,16 @@
 # Edule website
 
-Participate online courses in various fields Ability to save courses for
-reuse(rewatch)
+Participate online courses in various fields Ability to save courses for rewatch
 
 ## How To Use
 
-To setting up and show stories
+setting up and show stories
 
 ```bash
   yarn storybook
 ```
 
-To start project
+start project
 
 ```bash
   yarn start
