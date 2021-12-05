@@ -6,7 +6,7 @@ import { TextField } from 'components/shared/textField/TextField';
 import { useFilterCourses } from 'hooks/useFilterCourses';
 import { FC, useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { addCourses } from 'redux/actionCreators/coursesActionCreators';
 
