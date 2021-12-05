@@ -4,6 +4,7 @@ import PrivateRegister from 'components/PrivateRoutes/PrivateRegister';
 import PrivateRoute from 'components/PrivateRoutes/PrivateRoute';
 import { CoursesPage } from 'pages/courses/CoursesPage';
 import { IndexPage } from 'pages/index/IndexPage';
+import { NotFound } from 'pages/notFound/NotFound';
 import React, { Suspense } from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -32,6 +33,7 @@ const App: React.FC = () => {
               }
             />
             <Route path="/Register" element={<PrivateRegister />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
       </Layout>

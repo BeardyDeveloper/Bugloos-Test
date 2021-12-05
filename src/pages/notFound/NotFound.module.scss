@@ -1,0 +1,22 @@
+@import '../../styles/variables';
+
+.container {
+  width: 100%;
+  height: 700px;
+  background-color: $paper;
+  @include center-column;
+}
+
+.image {
+  width: 350px;
+  margin-bottom: 10px;
+}
+
+.link {
+  width: 350px;
+  text-align: center;
+  color: $success;
+  border: 1px solid $success;
+  padding: 15px;
+  border-radius: 14px;
+}
