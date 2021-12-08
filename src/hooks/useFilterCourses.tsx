@@ -5,7 +5,6 @@ import { useEffect, useState } from 'react';
 interface UseFilterCoursesProps extends CoursesGridProps {
   searchKeyword: string;
   selectedCategoryId: string;
-  selectedCourseIds: string[];
 }
 
 export const useFilterCourses = (props: UseFilterCoursesProps) => {

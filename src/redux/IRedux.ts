@@ -6,5 +6,5 @@ export interface AuthAction {
 
 export interface CourseAction {
   type: string;
-  idsArray: string[];
+  id: string;
 }

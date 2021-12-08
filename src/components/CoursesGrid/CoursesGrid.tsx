@@ -6,9 +6,12 @@ import { TextField } from 'components/shared/textField/TextField';
 import { useFilterCourses } from 'hooks/useFilterCourses';
 import { FC, useState } from 'react';
 import { BiSearch } from 'react-icons/bi';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { addCourses } from 'redux/actionCreators/coursesActionCreators';
+import {
+  addCourse,
+  deleteCourse,
+} from 'redux/actionCreators/coursesActionCreators';
 
 import styles from './CoursesGrid.module.scss';
 
@@ -27,27 +30,23 @@ export const CoursesGrid: FC<CoursesGridProps> = props => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [selectedCourseIds, setSelectedCourseIds] = useState<any>([]);
+  const selectedCourseIds = useSelector(
+    (state: any) => state.courses.selectedCourses,
+  );
+
   const [selectedCategoryId, setSelectedCategoryId] = useState('4');
   const [searchKeyword, setSearchKeyword] = useState('');
 
   const [filteredCourses] = useFilterCourses({
     courses,
     slides,
-    selectedCourseIds,
     selectedCategoryId,
     searchKeyword,
   });
 
   const onSeve = () => {
-    setTimeout(() => {
-      navigate('/Courses');
-    }, 200);
+    navigate('/Courses');
   };
-
-  setTimeout(() => {
-    dispatch(addCourses(selectedCourseIds));
-  }, selectedCourseIds);
 
   return (
     <div className={['container', styles.container].join(' ')}>
@@ -78,15 +77,14 @@ export const CoursesGrid: FC<CoursesGridProps> = props => {
               <div className={styles.courseWrapper} key={course.id}>
                 <CourseCard
                   {...course}
-                  selected={selectedCourseIds.find(
-                    (id: string) => id === course.id,
-                  )}
+                  selected={
+                    selectedCourseIds &&
+                    selectedCourseIds!.find((id: string) => id === course.id)
+                  }
                   onClick={() =>
-                    setSelectedCourseIds((prevStates: any) =>
-                      prevStates.includes(course.id)
-                        ? prevStates.filter((id: string) => id !== course.id)
-                        : [...prevStates, course.id],
-                    )
+                    selectedCourseIds.find((id: any) => id === course?.id)
+                      ? dispatch(deleteCourse(course?.id))
+                      : dispatch(addCourse(course?.id))
                   }
                 />
               </div>
@@ -94,11 +92,17 @@ export const CoursesGrid: FC<CoursesGridProps> = props => {
           ) : (
             <CourseCard
               {...filteredCourses}
-              selected={selectedCourseIds === filteredCourses.id}
-              onClick={setSelectedCourseIds((prevStates: any) => [
-                ...prevStates,
-                filteredCourses.id,
-              ])}
+              selected={
+                selectedCourseIds &&
+                selectedCourseIds!.find(
+                  (id: string) => id === filteredCourses.id,
+                )
+              }
+              onClick={() =>
+                selectedCourseIds.find((id: any) => id === filteredCourses?.id)
+                  ? dispatch(deleteCourse(filteredCourses?.id))
+                  : dispatch(addCourse(filteredCourses?.id))
+              }
             />
           )}
         </div>
@@ -109,7 +113,7 @@ export const CoursesGrid: FC<CoursesGridProps> = props => {
         <Button
           type={ButtonType.Info}
           label="Save Courses"
-          disabled={selectedCourseIds.length === 0}
+          disabled={!selectedCourseIds}
           onClick={onSeve}
         />
       </div>
