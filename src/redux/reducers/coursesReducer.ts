@@ -3,15 +3,18 @@
 import * as coursesActionTypes from '../actionTypes/actionTypes';
 import { CourseAction } from '../IRedux';
 
-// interface InitialState {
-//   selectedCourses: string[] | any;
-// }
+interface InitialState {
+  selectedCourses: string[] | [];
+}
 
 const initialState = {
   selectedCourses: [],
 };
 
-const coursesReducer = (state = initialState, action: CourseAction) => {
+const coursesReducer = (
+  state: InitialState = initialState,
+  action: CourseAction,
+) => {
   switch (action?.type) {
     case coursesActionTypes.ADD_COURSE:
       const updateStateInstance = { ...state };
